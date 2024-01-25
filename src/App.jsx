@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Product from './Product'
+import Product from './assets/Components/Product/Product'
 import Contador from './Contador'
 import NavBar from './assets/Components/NavBar/NavBar'
 import ItemListContainer from './assets/Components/ItemListContainer/ItemListContainer'
