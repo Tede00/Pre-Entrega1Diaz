@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import Product from './assets/Components/Product/Product'
-import Contador from './Contador'
+import Contador from './assets/Components/Accountant/Contador'
 import NavBar from './assets/Components/NavBar/NavBar'
 import ItemListContainer from './assets/Components/ItemListContainer/ItemListContainer'
+import Users from '../Users' 
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div className='container'>
       <NavBar/>
       <ItemListContainer greeting='Bienvenidos al E-Commerce'/>
+      <Users/>
       <Product 
           img='https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-grey.png?v=1' 
           title='Mouse' 
