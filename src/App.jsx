@@ -4,17 +4,17 @@ import Product from './assets/Components/Product/Product'
 import Contador from './assets/Components/Accountant/Contador'
 import NavBar from './assets/Components/NavBar/NavBar'
 import ItemListContainer from './assets/Components/ItemListContainer/ItemListContainer'
-import Users from '../Users' 
+import Users from './assets/Components/Users/Users' 
 
 function App() {
 
   return (
     <>
-    <div className='container'>
+    <div>
       <NavBar/>
-      <ItemListContainer greeting='Bienvenidos al E-Commerce'/>
-      <Users/>
-      <Product 
+      
+      <ItemListContainer/>
+      {/* <Product 
           img='https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-grey.png?v=1' 
           title='Mouse' 
           price={9300} 
@@ -33,7 +33,7 @@ function App() {
           title='Auricular' 
           price={13400}
         />
-        <Contador/>
+        <Contador/> */}
     </div>
     </>
   )
