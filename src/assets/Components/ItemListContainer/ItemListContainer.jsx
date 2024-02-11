@@ -19,7 +19,7 @@ const ItemListContainer = () => {
     }, [])
         
 
-  return (
+return (
 
     <>
         <h1>PRODUCTOS</h1>
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
             : <ItemList products={products} />
         }
     </>
-  )
+    )
 }
 
 export default ItemListContainer

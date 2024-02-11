@@ -11,8 +11,8 @@ function NavBar() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home"><DiCodeigniter /></Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#ekyword">Teclados</Nav.Link>
+          <Nav className=" align-items-center justify-content-between d-flex"  >
+            <Nav.Link href="#keyword">Teclados</Nav.Link>
             <Nav.Link href="#mouse">Mouse</Nav.Link>
             <Nav.Link href="#headset">Auriculares</Nav.Link>
             <Nav.Link href="#cart"><CarWidget/></Nav.Link>
