@@ -53,3 +53,4 @@ export const pedirDatosDeCategoria = (category) => {
         }, 2000)
     })
 }
+ 

@@ -17,7 +17,6 @@ const Contador = () => {
         <h2>EL contador esta en {contador}</h2>
         <button onClick={sumar}>+</button>
         <button onClick={restar}>-</button>
-        
     </div>
   )
 }
