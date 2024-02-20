@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactLoading from 'react-loading';
 import productosJson from "../../../productosJson.json";
+import ItemList from "../ItemList/Itemlist";
+
 
 function asyncMock(categoryId) {
   return new Promise((resolve, reject) => {
@@ -40,15 +42,7 @@ export default function ItemListContainer() {
         </div>
       ) : (
         <section className="item-list-container">
-          {productos.map((item) => (
-            <Link to={`/item/${item.id}`} key={item.id}>
-              <div className="card">
-                <h2>{item.name}</h2>
-                <h3>${item.price}</h3>
-                <p>{item.description}</p>
-              </div>
-            </Link>
-          ))}
+          <ItemList products={productos} />
         </section>
       )}
     </main>

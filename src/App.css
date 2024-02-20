@@ -58,3 +58,12 @@
 a.active {
   color: #ffffff;
 }
+
+.item-detail{
+  display: flex;
+  flex-direction: column;
+}
+
+.item-detail h1{
+  text-transform: capitalize;
+}
