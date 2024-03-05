@@ -21,10 +21,12 @@ export default function ItemCount ( {initial, stock, onAdd}) {
     }
     
     return (
-        <>
+        <> 
+            <div>
             <button className="buttonCount" disabled={count<=1} onClick={ decrement }> - </button>
                 <span> {count} </span>
             <button className="buttonCount" disabled={count>=stock} onClick={ increment }> + </button>
+            </div>
             <div>
                 <button className="buttonCount" disabled={stock<=0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
             </div>

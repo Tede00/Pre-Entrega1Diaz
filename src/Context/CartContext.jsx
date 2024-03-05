@@ -24,7 +24,7 @@ export const CartProvider = ({ children }) =>{
       console.log('Carrito: ', cart)
 
   const removeItem=(product)=>{
-    setCart(cart.filter(item=>item.id!==product.id));
+    setCart(cart.filter(item=>item.id!==product));
   }
 
   const clearCart=() =>setCart([])
@@ -32,9 +32,26 @@ export const CartProvider = ({ children }) =>{
   const isInCart = (id)=> {
     return cart.find(product =>product.id===id)? true:false
   }
+
+  const totalPrice =  () => {
+    return cart.reduce((prev, act ) => prev + act.quantity * act.price, 0)
+  }
+  
+  const totalProduct = () => {
+    return cart.reduce((acum , prodActual ) => acum + prodActual.quantity, 0)
+  }
  
   return (
-    <CartContext.Provider value={{cart, addItem, removeItem, clearCart, isInCart}}>
+    <CartContext.Provider value={{
+      cart, 
+      addItem, 
+      removeItem, 
+      clearCart, 
+      isInCart,
+      totalPrice,
+      totalProduct,
+      cart,
+      }}>
       {children}
     </CartContext.Provider>
   );

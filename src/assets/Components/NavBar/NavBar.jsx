@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { CiShoppingCart } from "react-icons/ci";
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function Navar() {
   return (
@@ -11,7 +11,7 @@ export default function Navar() {
         <NavLink to="/category/Teclados">Teclados</NavLink>
         <NavLink to="/category/Ratones">Ratones</NavLink>
         <NavLink to="/category/Auriculares">Auriculares</NavLink>
-        <NavLink to="/cart"> <CiShoppingCart /></NavLink>
+        <NavLink to="/cart"> <CartWidget/> </NavLink>
       </nav>
     </header>
   );
