@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ItemCount ( {initial, stock, onAdd}) {
 
-    const [count,setCount] = useState(initial);
+    const [count,setCount] = useState(parseInt(initial));
+
+    useEffect(() => {
+        setCount(parseInt(initial))
+    },[initial]);
     
     const decrement = ()=>{
         if(count > 1){
