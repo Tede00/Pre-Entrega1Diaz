@@ -67,3 +67,20 @@ a.active {
 .item-detail h1{
   text-transform: capitalize;
 }
+
+.buttonCount{
+  border: none; 
+  color: black; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px;
+  margin: .625rem;
+  background-color: rgb(69, 58, 58); 
+  border: 2px solid #01170f;
+  color: white; 
+}
+
+.buttonCount:hover {
+  background-color:rgb(130, 116, 116); 
+  color:rgb(255, 243, 243); 
+}

@@ -1,7 +1,15 @@
 import ReactLoading from 'react-loading';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+
 
 const ItemDetail = ({ ProductoSeleccionado }) => {
-    console.log(ProductoSeleccionado);
+    
+
+    const onAdd = (quantity) => {
+        console.log({quantity})
+    }
 
     if (!ProductoSeleccionado) {
         return <div className='d-flex justify-content-center'>
@@ -18,6 +26,7 @@ const ItemDetail = ({ ProductoSeleccionado }) => {
                     <p>Descripcion: {ProductoSeleccionado.description}</p>
                     <p>Precio: {ProductoSeleccionado.price}</p>
                     <p>Categoria: {ProductoSeleccionado.category}</p>
+                    <ItemCount initial={1} stock={ProductoSeleccionado.stock} onAdd={onAdd} />
                 </section>
             </section>
         </main>

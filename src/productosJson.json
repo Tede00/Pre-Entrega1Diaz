@@ -4,55 +4,63 @@
       "name": "Teclado mecánico",
       "price": 59.99,
       "description": "Teclado mecánico retroiluminado con switches Cherry MX, ideal para gaming.",
-      "category": "Teclados"
+      "category": "Teclados",
+      "stock": 5
     },
     {
       "id": "2",
       "name": "Ratón inalámbrico ergonómico",
       "price": 29.99,
       "description": "Ratón inalámbrico ergonómico con diseño contorneado para mayor comodidad durante largas horas de uso.",
-      "category": "Ratones"
+      "category": "Ratones",
+      "stock": 5
     },
     {
       "id": "3",
       "name": "Auriculares gaming con micrófono",
       "price": 49.99,
       "description": "Auriculares gaming con sonido envolvente y micrófono retráctil, ideal para comunicación durante el juego.",
-      "category": "Auriculares"
+      "category": "Auriculares",
+      "stock": 5
     },
     {
       "id": "4",
       "name": "Teclado ergonómico",
       "price": 39.99,
       "description": "Teclado ergonómico con reposamuñecas acolchado para mayor comodidad durante largas sesiones de escritura.",
-      "category": "Teclados"
+      "category": "Teclados",
+      "stock": 5
     },
     {
       "id": "5",
       "name": "Ratón gaming con luces RGB",
       "price": 49.99,
       "description": "Ratón gaming con sensor de alta precisión y luces RGB personalizables, perfecto para gamers exigentes.",
-      "category": "Ratones"
+      "category": "Ratones",
+      "stock": 5
     },
     {
       "id": "6",
       "name": "Auriculares inalámbricos deportivos",
       "price": 34.99,
       "description": "Auriculares inalámbricos con diseño deportivo y resistencia al agua, ideales para actividades al aire libre.",
-      "category": "Auriculares"
+      "category": "Auriculares",
+      "stock": 5
     },
     {
       "id": "7",
       "name": "Teclado numérico USB",
       "price": 14.99,
       "description": "Teclado numérico compacto con conexión USB, ideal para aquellos que requieren un teclado adicional para tareas numéricas.",
-      "category": "Teclados"
+      "category": "Teclados",
+      "stock": 5
     },
     {
       "id": "8",
       "name": "Ratón óptico básico",
       "price": 9.99,
       "description": "Ratón óptico básico con diseño ergonómico y botones silenciosos, perfecto para uso diario en la oficina o en casa.",
-      "category": "Ratones"
+      "category": "Ratones",
+      "stock": 5
     }
   ]

@@ -19,7 +19,7 @@ export function CartProvider({ children }) {
     function updateEmail(email) {
         setUser({ 
             ...user, 
-            email: email
+            email: email 
         });
     }
 
