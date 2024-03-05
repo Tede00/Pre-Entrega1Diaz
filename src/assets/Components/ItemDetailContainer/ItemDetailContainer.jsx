@@ -33,7 +33,7 @@ useEffect(() => {
 
 return (
 
-    <ItemDetail ProductoSeleccionado= {producto}/>
+    <ItemDetail product= {producto}/>
 
 );
 
