@@ -25,10 +25,10 @@ const ItemDetail = ({ product }) => {
         <main className="item-detail">
             <h1>{product.name}</h1>
             <section>
-            <img src={product.img}alt="" />
+            <img className="imgItemDetail" src={product.img}alt="" />
                 <section className="product-info">
                     <p>Descripcion: {product.description}</p>
-                    <p>Precio: {product.price}</p>
+                    <p>Precio: ${product.price}</p>
                     <p>Categoria: {product.category}</p>
                     <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
                     {

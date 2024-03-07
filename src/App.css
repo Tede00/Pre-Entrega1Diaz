@@ -38,9 +38,17 @@
   color: white;
   background: linear-gradient(#3e3c3e, #470c33);
   border-radius: 1.25rem;
-  width: 250px;
-  height: auto ;
+  width: 300px;
+  height: 700px ;
   margin: .625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.imgItem {
+  border: #01170f;
+  border-radius: .625rem;
 }
 
 .read-the-docs {
