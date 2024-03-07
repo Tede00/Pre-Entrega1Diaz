@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import ReactLoading from 'react-loading';
 import productosJson from "../../../productosJson.json";
 import ItemList from "../ItemList/Itemlist";
-
+import {getFirestore, doc, getDocs, collection} from "firebase/firestore";
 
 function asyncMock(categoryId) {
   return new Promise((resolve, reject) => {
@@ -24,6 +24,24 @@ export default function ItemListContainer() {
   const { categoryId } = useParams();
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = getFirestore();
+      const prodRef = collection(db, 'productos');
+  
+      try {
+        const querySnapshot = await getDocs(prodRef);
+        const productos = querySnapshot.docs.map(doc => doc.data());
+        console.log(productos);
+      } catch (error) {
+        console.error('Error al obtener los documentos: ', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   useEffect(() => {
     setLoading(true); 
