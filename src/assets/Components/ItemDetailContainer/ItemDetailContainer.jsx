@@ -1,40 +1,37 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ProductosJson from "../../../productosJson.json";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import {data} from "../../../main";
+
+const ItemDetailContainer = () => {
+    const [products, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
 
 
+    useEffect(() => {
+        const db= data
 
-export default function ItemDetailContainer() {
-const [producto, setProducto] = useState(null);
-const { productId } = useParams();
+        const productoRef = doc(db, "productos", id);
 
-function buscaId(productId) {
-    return new Promise((resolve, reject) => {
-    setTimeout(() => {
-        const producto = ProductosJson.find((producto) => producto.id === productId);
-        if (producto) {
-        resolve(producto);
-        } else {
-        reject("Producto no disponible");
-        }
-    }, 2000);
-    });
-}
-
-useEffect(() => {
-    buscaId(productId)
-    .then((res) => setProducto(res))
-    .catch((messageNF) => {
-        console.log(messageNF);
-    })
-}, [productId]);
-
-
-return (
-
-    <ItemDetail product= {producto}/>
-
-);
+        getDoc(productoRef)
+         .then((doc) => {
+                const data = doc.data();
+                const products = { id: doc.id,...data };
+                setLoading(false);
+                setProduct(products);
+            })
+         .catch(error => {
+                console.error("Error al obtener producto:", error);
+                setLoading(false);
+            });
+    }, [id]);
+ 
+    return (
+    <ItemDetail product={products} />
+    )
 
 }
+
+export default ItemDetailContainer;

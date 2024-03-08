@@ -9,6 +9,7 @@ const ItemDetail = ({ product }) => {
     const [goCart, setGoCart] =useState(false);
     const {addItem} = useCartContext()
     
+    
 
     const onAdd = (quantity) => {
         setGoCart(true);

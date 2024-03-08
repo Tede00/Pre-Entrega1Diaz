@@ -1,54 +1,51 @@
 import { useEffect, useState } from "react";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ReactLoading from 'react-loading';
-import productosJson from "../../../productosJson.json";
 import ItemList from "../ItemList/Itemlist";
-import {getFirestore, doc, getDocs, collection} from "firebase/firestore";
-
-function asyncMock(categoryId) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if(categoryId === undefined) {
-        resolve(productosJson);
-      } else {
-        const productosFiltrados = productosJson.filter((item) => {
-          return item.category === categoryId
-        });
-        resolve(productosFiltrados);
-      }
-    }, 1000);
-  });
-}
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 export default function ItemListContainer() {
   const { categoryId } = useParams();
   const [productos, setProductos] = useState([]);
+  const [id, setId] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
-    const fetchData = async () => {
+    setLoading(true);
+
+    if (categoryId) {
       const db = getFirestore();
-      const prodRef = collection(db, 'productos');
-  
-      try {
-        const querySnapshot = await getDocs(prodRef);
-        const productos = querySnapshot.docs.map(doc => doc.data());
-        console.log(productos);
-      } catch (error) {
-        console.error('Error al obtener los documentos: ', error);
-      }
-    };
-  
-    fetchData();
-  }, []);
+      const productoRef = query(collection(db, "productos"), where("category", "==", categoryId));
 
-  useEffect(() => {
-    setLoading(true); 
-    asyncMock(categoryId).then((res) => {
-      setProductos(res);
-      setLoading(false);
-    });
+      getDocs(productoRef)
+        .then((collection) => {
+          setLoading(false);
+          const productos = collection.docs.map((doc) => doc.data());
+          const id = collection.docs.map((doc) => doc.id);
+          setProductos(productos);
+          setId(id);
+        })
+        .catch(error => {
+          console.error("Error al obtener productos:", error);
+          setLoading(false);
+        });
+    } else {
+      const db = getFirestore();
+      const productoRef = collection(db, "productos");
+
+      getDocs(productoRef)
+        .then((collection) => {
+          setLoading(false);
+          const productos = collection.docs.map((doc) => doc.data());
+          const id = collection.docs.map((doc) => doc.id);
+          setProductos(productos);
+          setId(id);
+        })
+        .catch(error => {
+          console.error("Error al obtener productos:", error);
+          setLoading(false);
+        });
+    }
   }, [categoryId]);
 
   return (
@@ -60,7 +57,7 @@ export default function ItemListContainer() {
         </div>
       ) : (
         <section className="item-list-container">
-          <ItemList products={productos} />
+          <ItemList products={productos} ids={id} />
         </section>
       )}
     </main>

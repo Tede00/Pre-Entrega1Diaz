@@ -51,6 +51,13 @@
   border-radius: .625rem;
 }
 
+.imgItemDetail{
+  border: #01170f;
+  border-radius: .625rem;
+  width: 18.75rem;
+  height: auto;
+}
+
 .read-the-docs {
   color: #888;
 }
@@ -91,4 +98,40 @@ a.active {
 .buttonCount:hover {
   background-color:rgb(130, 116, 116); 
   color:rgb(255, 243, 243); 
+}
+
+.cartContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.itemCart{
+  height: 8rem;
+  display: flex; 
+  flex-direction: row; 
+  justify-content:space-around;
+  align-items:center; 
+  color: white;
+  background-color: gray; 
+  margin-top:10px   ;
+}
+
+.itemCart p{
+width: 15rem;
+}
+
+.imgCart{
+  border: #01170f;
+  border-radius:.625rem;
+  width: 5rem;
+}
+
+.total{
+  padding: 14px 28px; 
+  border-radius: 5px;
+  margin: .625rem;
+  background-color: rgb(69, 58, 58); 
+  border: 2px solid #01170f;
+  color: white; 
 }

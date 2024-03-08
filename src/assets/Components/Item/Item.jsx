@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
- export default function Item ({product}){
+ export default function Item ({product, id}){
     return(
         <div className="card">
             <img className="imgItem" src={product.img}alt="" />
