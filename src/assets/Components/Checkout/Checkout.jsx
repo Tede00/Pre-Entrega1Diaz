@@ -1,67 +1,67 @@
 import React, { useState } from 'react';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useCartContext } from '../../../Context/CartContext'
-
+import { useCartContext } from '../../../Context/CartContext';
+import { Link } from 'react-router-dom'
 
 const Checkout = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const { cart, totalPrice } = useCartContext()
+  const { cart, totalPrice } = useCartContext();
 
-
-  console.log(cart);
+  console.log(cart)
 
   function saveOrder() {
+    const orderItems = cart.map(item => ({
+      title: item.name,
+      price: item.price,
+      quantity: item.quantity,
+    }));
+
     const order = {
       buyer: {
         name: name,
         phone: phone,
         email: email,
       },
-      items: [
-        {
-          id: '3',
-          title: 'teclado',
-          price: '80',
-        }
-      ],
-      total: '80'
+      items: orderItems,
     };
+
     const db = getFirestore();
-    const ordenesRef = collection(db, 'ordenes');
-    addDoc(ordenesRef, order)
+    const ordersRef = collection(db, 'ordenes');
+    addDoc(ordersRef, order)
       .then(() => {
-        console.log('Order saved successfully!');
+        console.log('Orden guardada correctamente');
       })
       .catch((error) => {
-        console.error('Error adding document: ', error);
+        console.error('Error al guardar la orden', error);
       });
   }
 
   return (
-    <div>
-
-   {   cart.map(product => <p>{product.name}</p>)}
+    <div className='formCheckout'>
+      <h1>INGRESE SUS DATOS</h1>
       <input
         type="text"
-        placeholder="Name"
+        placeholder="Nombre"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Phone"
+        placeholder="Teléfono"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
       <input
-        type="text"
+        type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button onClick={saveOrder}>Guardar Orden</button>
+      <Link to='/ordenLista'>
+        <button className='total' onClick={saveOrder}>Guardar Orden</button>
+      </Link>
     </div>
   );
 };

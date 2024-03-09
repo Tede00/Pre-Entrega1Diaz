@@ -52,11 +52,10 @@ header nav {
   gap: 1em;
   font-weight: 600;
   font-size: 1.2em;
-  justify-content: ;
 }
 
 header nav a {
-  color: #000;
+  color: #b5b3b3;
 }
 .titulo {
   text-align: center; 

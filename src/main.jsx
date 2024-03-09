@@ -22,7 +22,5 @@ const analytics = getAnalytics(app);
 export const data = getFirestore();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>,
 )

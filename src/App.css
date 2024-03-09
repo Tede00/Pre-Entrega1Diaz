@@ -72,6 +72,7 @@
 
 a.active {
   color: #ffffff;
+  font-size: large;
 }
 
 .item-detail{
@@ -134,4 +135,21 @@ width: 15rem;
   background-color: rgb(69, 58, 58); 
   border: 2px solid #01170f;
   color: white; 
+}
+
+.formCheckout{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formCheckout input{
+  margin: .625rem;
+  width: 40%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

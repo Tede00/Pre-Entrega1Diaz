@@ -21,8 +21,8 @@ const Cart = () => {
         cart.map(product => <CartItem key={product.id} product={product} />)
       }
       <div>
-        <p className='total'>Total <br/>${totalPrice()} </p>
-        <Link  to= '/checkout/${cart}'>
+        <p className='total'>Total <br/>${totalPrice().toFixed(2)} </p>
+        <Link to= '/checkout'>
           <button className='buttonCount'>Generar Orden</button>
         </Link>
       </div>
