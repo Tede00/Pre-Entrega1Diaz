@@ -9,7 +9,13 @@ const Checkout = () => {
   const [email, setEmail] = useState('');
   const { cart, totalPrice } = useCartContext();
 
-  console.log(cart)
+  const getTotalQuantity = () => {
+    let totalQuantity = 0;
+    cart.forEach(item => {
+      totalQuantity += item.quantity;
+    });
+    return totalQuantity;
+  };
 
   function saveOrder() {
     const orderItems = cart.map(item => ({
@@ -25,6 +31,7 @@ const Checkout = () => {
         email: email,
       },
       items: orderItems,
+      total: getTotalQuantity()
     };
 
     const db = getFirestore();
@@ -59,7 +66,7 @@ const Checkout = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Link to='/ordenLista'>
+      <Link to='/OrdenLista'>
         <button className='total' onClick={saveOrder}>Guardar Orden</button>
       </Link>
     </div>

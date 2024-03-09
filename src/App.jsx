@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Cart from './assets/Components/Cart/Cart.jsx';
 import {CartProvider} from './Context/CartContext.jsx';
 import Checkout from './assets/Components/Checkout/Checkout';
+import OrdenLista from './assets/Components/OrdenLista/OrdenLista';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
               <Route path="/product/:id" element={<ItemDetailContainer />} />
               <Route path='/cart' element= { <Cart/>} />
               <Route path='/checkout' element= { <Checkout/>} />
-              <Route path='/ordenLista' element= { <ordenLista/>} />
+              <Route path='/ordenlista' element= { <OrdenLista/>} />
+
           </Routes>
         </CartProvider>
       </BrowserRouter>
