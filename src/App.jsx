@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Cart from './assets/Components/Cart/Cart.jsx';
 import {CartProvider} from './Context/CartContext.jsx';
 import Checkout from './assets/Components/Checkout/Checkout';
-import Ordenlista from './assets/Components/Ordenlista/Ordenlista';
+import Ordenlista from './assets/Components/ordenLista/ordenLista';
 function App() {
 
   return (
