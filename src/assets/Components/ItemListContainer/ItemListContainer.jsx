@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactLoading from 'react-loading';
-import ItemList from "../ItemList/Itemlist";
+import ItemList from "../ItemList/ItemList";
 import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 export default function ItemListContainer() {
