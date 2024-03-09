@@ -66,7 +66,7 @@ const Checkout = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Link to='/OrdenLista'>
+      <Link to='/ordenlista'>
         <button className='total' onClick={saveOrder}>Guardar Orden</button>
       </Link>
     </div>
