@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useCartContext } from '../../../Context/CartContext';
 import { Link } from 'react-router-dom'
+import { useState } from 'react';
 
 const Checkout = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const { cart, totalPrice } = useCartContext();
+  const { cart} = useCartContext();
 
   const getTotalQuantity = () => {
     let totalQuantity = 0;

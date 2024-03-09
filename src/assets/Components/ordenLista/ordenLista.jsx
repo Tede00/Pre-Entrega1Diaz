@@ -1,7 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
-const OrdenLista = () => {
+const Ordenlista = () => {
   return (
     <>
     <div>
@@ -17,4 +16,4 @@ const OrdenLista = () => {
   )
 }
 
-export default OrdenLista
+export default Ordenlista
